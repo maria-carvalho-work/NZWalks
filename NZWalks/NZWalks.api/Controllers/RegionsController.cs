@@ -20,7 +20,6 @@ namespace NZWalks.api.Controllers
         }
 
         
-
         [HttpGet]
         public async Task<IActionResult> GetAllRegions()
         {
