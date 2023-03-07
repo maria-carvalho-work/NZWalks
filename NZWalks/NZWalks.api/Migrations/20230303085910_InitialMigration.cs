@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace NZWalks.api.Migrations
+namespace NZWalks.API.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration

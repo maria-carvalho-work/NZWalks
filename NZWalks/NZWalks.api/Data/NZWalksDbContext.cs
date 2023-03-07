@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NZWalks.api.Models.Domain;
+using NZWalks.API.Models.Domain;
 
-namespace NZWalks.api.Data
+namespace NZWalks.API.Data
 {
     public class NZWalksDbContext: DbContext
     {

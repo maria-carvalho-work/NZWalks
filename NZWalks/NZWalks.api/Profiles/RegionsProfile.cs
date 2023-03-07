@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace NZWalks.api.Profiles
+namespace NZWalks.API.Profiles
 {
     public class RegionsProfile : Profile
     {
