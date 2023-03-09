@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using NZWalks.API.Models.DTO;
 using NZWalks.API.Repositories;
 
 namespace NZWalks.API.Controllers
@@ -49,6 +50,13 @@ namespace NZWalks.API.Controllers
         public async Task<IActionResult> AddWalkDifficultyAsync(
             Models.DTO.AddWalkDifficultyRequest addWalkDifficultyRequest)
         {
+            // Validate Model
+
+            //if (!ValidateAddWalkDifficultyAsync(addWalkDifficultyRequest))
+            //{
+            //    return BadRequest(ModelState);
+            //}
+
             // Convert DTO to Domain model
             var walkDifficultyDomain = new Models.Domain.WalkDifficulty
             {
@@ -71,6 +79,11 @@ namespace NZWalks.API.Controllers
         public async Task<IActionResult> UpdateWalkDifficultyAsync(Guid id,
             Models.DTO.UpdateWalkDifficultyRequest updateWalkDifficultyRequest)
         {
+            //if (!ValidateUpdateWalkDifficultyAsync(updateWalkDifficultyRequest))
+            //{
+            //    return BadRequest(ModelState);
+            //}
+
             // Convert DTO to Domiain Model
             var walkDifficultyDomain = new Models.Domain.WalkDifficulty
             {
@@ -108,4 +121,56 @@ namespace NZWalks.API.Controllers
         }
 
     }
+
+    #region Private methods
+
+    //private bool ValidateAddWalkDifficultyAsync(Models.DTO.AddWalkDifficultyRequest addWalkDifficultyRequest)
+    //{
+    //    if (addWalkDifficultyRequest == null)
+    //    {
+    //        ModelState.AddModelError(nameof(addWalkDifficultyRequest),
+    //            $"Walk Difficulty data is required");
+
+    //        return false;
+    //    }
+
+    //    if (string.IsNullOrWhiteSpace(addWalkDifficultyRequest.Code))
+    //    {
+    //        ModelState.AddModelError(nameof(addWalkDifficultyRequest.Code),
+    //            $"{nameof(addWalkDifficultyRequest.Code)} cannot be null, empty or whitespace");
+    //    }
+
+    //    if (ModelState.ErrorCount > 0)
+    //    {
+    //        return false;
+    //    }
+
+    //    return true;
+    //}
+
+    //private bool ValidateUpdateWalkDifficultyAsync(Models.DTO.UpdateWalkDifficultyRequest updateWalkDifficultyRequest)
+    //{
+    //    if (updateWalkDifficultyRequest == null)
+    //    {
+    //        ModelState.AddModelError(nameof(updateWalkDifficultyRequest),
+    //            $"Region data is required");
+
+    //        return false;
+    //    }
+
+    //    if (string.IsNullOrWhiteSpace(updateWalkDifficultyRequest.Code))
+    //    {
+    //        ModelState.AddModelError(nameof(updateWalkDifficultyRequest.Code),
+    //            $"{nameof(updateWalkDifficultyRequest.Code)} cannot be null, empty or whitespace");
+    //    }
+
+    //    if (ModelState.ErrorCount > 0)
+    //    {
+    //        return false;
+    //    }
+
+    //    return true;
+    //}
+
+    #endregion
 }

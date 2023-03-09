@@ -56,5 +56,6 @@ namespace NZWalks.API.Repositories
             await nZWalksDbContext.SaveChangesAsync();
             return existingWalkDifficulty;
         }
+
     }
 }
